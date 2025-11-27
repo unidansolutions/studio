@@ -4,7 +4,7 @@
 <style>
 body {
   margin: 0;
-  background-image: url('https://images.unsplash.com/photo-1588774069160-8e5fdb3a64ac');
+  background-image: url('https://i.imgur.com/Hltnf0O.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -44,7 +44,7 @@ body {
   right: 20px;
   width: 360px;
   height: 520px;
-  background-image: url('https://images.unsplash.com/photo-1588774069160-8e5fdb3a64ac');
+  background-image: url('https://i.imgur.com/Hltnf0O.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -179,7 +179,6 @@ function welcomeMessage() {
   `);
 }
 
-/* INVIO MESSAGGIO */
 aiSend.onclick = sendUserMsg;
 aiInput.addEventListener("keydown", e => { if (e.key === "Enter") sendUserMsg(); });
 
@@ -193,11 +192,6 @@ function sendUserMsg() {
 
 function aiRespond(t) {
 
-  /* ===============================
-        RISPOSTE CASUALI INTELLIGENTI
-  =============================== */
-
-  // ORARI CASUALI
   if (t.includes("orari") || t.includes("aperti") || t.includes("quando")) {
     const randomHours = [
       "Oggi siamo aperti dalle 8:00 alle 18:30.",
@@ -208,19 +202,16 @@ function aiRespond(t) {
     return addMsg(randomHours[Math.floor(Math.random()*randomHours.length)]);
   }
 
-  // NUMERO DI TELEFONO CASUALE
   if (t.includes("telefono") || t.includes("numero") || t.includes("contatto")) {
     const fakeNumber = "+39 3" + Math.floor(100000000 + Math.random()*900000000);
     return addMsg("Puoi contattarci a questo numero: <b>" + fakeNumber + "</b>");
   }
 
-  // EMAIL CASUALE
   if (t.includes("email") || t.includes("mail")) {
     const fakeEmail = "info" + Math.floor(Math.random()*99) + "@studio-medico.it";
     return addMsg("La nostra email: <b>" + fakeEmail + "</b>");
   }
 
-  // INFORMAZIONI GENERALI
   if (t.includes("info") || t.includes("informazioni") || t.includes("come funziona")) {
     const info = [
       "Possiamo fornirti visite diagnostiche, controlli e trattamenti personalizzati.",
@@ -231,12 +222,10 @@ function aiRespond(t) {
     return addMsg(info[Math.floor(Math.random()*info.length)]);
   }
 
-  // PRENOTAZIONI
   if (t.includes("prenot")) {
     return addMsg("Perfetto! Dimmi giorno, orario e tipo di visita e preparo una richiesta.");
   }
 
-  // PREZZI
   if (t.includes("prezzo") || t.includes("costo") || t.includes("quanto")) {
     const randomCost = [
       "Una visita costa circa €50.",
@@ -247,7 +236,6 @@ function aiRespond(t) {
     return addMsg(randomCost[Math.floor(Math.random()*randomCost.length)]);
   }
 
-  // RISPOSTE GENERICHE INTELLIGENTI
   const generalResponses = [
     "Chiaro! Vuoi approfondire?",
     "Interessante, dimmi pure 😊",
