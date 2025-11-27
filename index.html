@@ -1,15 +1,15 @@
 <!-- ============================
-   SFONDO PAGINA TIPO STUDIO DENTISTICO
+   SFONDO PAGINA (DENTISTICO)
 ============================= -->
 <style>
 body {
   margin: 0;
-  background-image: url('https://images.unsplash.com/photo-1588774069160-8e5fdb3a64ac');
+  background-image: url('https://images.unsplash.com/photo-1588774069160-8e5fdb3a64ac?auto=format&fit=crop&w=1600&q=80');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 }
 </style>
 
@@ -44,25 +44,23 @@ body {
   right: 20px;
   width: 360px;
   height: 520px;
-  background-image: url('https://images.unsplash.com/photo-1588774069160-8e5fdb3a64ac');
+  background-image: url('https://images.unsplash.com/photo-1588774069160-8e5fdb3a64ac?auto=format&fit=crop&w=1000&q=80');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   display: none;
   flex-direction: column;
   overflow: hidden;
   z-index: 999999;
-  backdrop-filter: blur(4px);
 }
 
 /* Header */
 #aiChatHeader {
-  background: rgba(0, 119, 255, 0.90);
+  background: rgba(0, 119, 255, 0.92);
   color: white;
   padding: 15px;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -78,9 +76,10 @@ body {
 .msg {
   padding: 10px;
   margin: 8px 0;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 14px;
   max-width: 80%;
+  line-height: 1.4;
 }
 .bot { background: #dce9ff; }
 .user { background: #c6ffd1; margin-left: auto; }
@@ -201,42 +200,42 @@ function aiRespond(t) {
   if (t.includes("orari") || t.includes("aperti") || t.includes("quando")) {
     const randomHours = [
       "Oggi siamo aperti dalle 8:00 alle 18:30.",
-      "Siamo aperti 9:00–19:00.",
+      "Siamo aperti 9:00–19:00 senza pausa.",
       "Domani aperti solo 8:30–13:00.",
-      "Siamo operativi tutto il giorno per urgenze!"
+      "Per urgenze rispondiamo 24/7!"
     ];
     return addMsg(randomHours[Math.floor(Math.random()*randomHours.length)]);
   }
 
-  // NUMERO DI TELEFONO CASUALE
+  // NUMERO TELEFONO CASUALE
   if (t.includes("telefono") || t.includes("numero") || t.includes("contatto")) {
     const fakeNumber = "+39 3" + Math.floor(100000000 + Math.random()*900000000);
-    return addMsg("Puoi contattarci a questo numero: <b>" + fakeNumber + "</b>");
+    return addMsg("Ecco un numero diretto: <b>" + fakeNumber + "</b>");
   }
 
   // EMAIL CASUALE
   if (t.includes("email") || t.includes("mail")) {
     const fakeEmail = "info" + Math.floor(Math.random()*99) + "@studio-medico.it";
-    return addMsg("La nostra email: <b>" + fakeEmail + "</b>");
+    return addMsg("Puoi scriverci a: <b>" + fakeEmail + "</b>");
   }
 
   // INFORMAZIONI GENERALI
   if (t.includes("info") || t.includes("informazioni") || t.includes("come funziona")) {
     const info = [
-      "Possiamo fornirti visite diagnostiche, controlli e trattamenti personalizzati.",
-      "Offriamo servizi completi di prevenzione, analisi e cura.",
-      "Ogni visita include anamnesi e valutazione dettagliata.",
-      "Offriamo anche consulti online se ti è più comodo."
+      "Offriamo visite diagnostiche, controlli e trattamenti personalizzati.",
+      "Lo studio fornisce servizi completi di prevenzione, analisi e cura.",
+      "Ogni visita include anamnesi e valutazione clinica dettagliata.",
+      "Disponiamo anche di consulti online, se preferisci non venire in studio."
     ];
     return addMsg(info[Math.floor(Math.random()*info.length)]);
   }
 
   // PRENOTAZIONI
   if (t.includes("prenot")) {
-    return addMsg("Perfetto! Dimmi giorno, orario e tipo di visita e preparo una richiesta.");
+    return addMsg("Perfetto! Dimmi giorno, orario e tipo di visita e preparo la richiesta.");
   }
 
-  // PREZZI
+  // PREZZI CASUALI
   if (t.includes("prezzo") || t.includes("costo") || t.includes("quanto")) {
     const randomCost = [
       "Una visita costa circa €50.",
@@ -251,13 +250,11 @@ function aiRespond(t) {
   const generalResponses = [
     "Chiaro! Vuoi approfondire?",
     "Interessante, dimmi pure 😊",
-    "Perfetto, ti seguo.",
-    "Certo! Come posso aiutarti ancora?",
-    "Vuoi orari, prezzi, contatti o prenotazioni?",
-    "Posso darti info su visite, costi o disponibilità."
+    "Perfetto, sono qui!",
+    "Va bene! Vuoi orari, prezzi o info servizi?",
+    "Posso aiutarti con informazioni mediche, costi o prenotazioni."
   ];
 
   addMsg(generalResponses[Math.floor(Math.random()*generalResponses.length)]);
 }
 </script>
-
