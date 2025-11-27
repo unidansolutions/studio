@@ -1,10 +1,10 @@
 <!-- ============================
-   SFONDO PAGINA CON IMMAGINE
+   SFONDO PAGINA PERSONALIZZATO
 ============================= -->
 <style>
 body {
   margin: 0;
-  background-image: url('https://s.tmimgcdn.com/scr/800x500/374500/dentare-modello-di-pagina-di-destinazione-per-dentista-e-clinica-odontoiatrica_374595-original.png');
+  background-image: url('https://i.imgur.com/Hltnf0O.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -12,6 +12,7 @@ body {
   font-family: Arial, sans-serif;
 }
 </style>
+
 
 <!-- ============================
       CHATBOT BUTTON
@@ -34,6 +35,7 @@ body {
 
 <div id="aiChatBtn">💬</div>
 
+
 <!-- ============================
         CHATBOT BOX
 ============================= -->
@@ -44,9 +46,8 @@ body {
   right: 20px;
   width: 360px;
   height: 520px;
-  background-image: url('https://images.unsplash.com/photo-1588774069160-8e5fdb3a64ac?auto=format&fit=crop&w=1000&q=80');
-  background-size: cover;
-  background-position: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   display: none;
@@ -109,6 +110,7 @@ body {
 }
 </style>
 
+
 <!-- ============================
        CHATBOT CONTAINER
 ============================= -->
@@ -120,6 +122,7 @@ body {
     <button id="aiSendBtn">Invia</button>
   </div>
 </div>
+
 
 <!-- ============================
          CHATBOT LOGIC
